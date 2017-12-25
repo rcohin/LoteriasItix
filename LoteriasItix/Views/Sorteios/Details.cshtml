@@ -1,0 +1,68 @@
+﻿@model LoteriasItix.Models.Sorteio
+
+@{
+    ViewBag.Title = "Resultado";
+}
+
+<body background="~/Content/Images/Loteria.jpg" style="background-size:1400px 800px; background-repeat:no-repeat">
+    <h2>Resultado do Sorteio</h2>
+    <div style="background-color:cornsilk; opacity: 0.9;">
+    <div>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.SorteioId)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.SorteioId)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Numeros)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Numeros.N1)
+                @Html.DisplayFor(model => model.Numeros.N2)
+                @Html.DisplayFor(model => model.Numeros.N3)
+                @Html.DisplayFor(model => model.Numeros.N4)
+                @Html.DisplayFor(model => model.Numeros.N5)
+                @Html.DisplayFor(model => model.Numeros.N6)
+            </dd>
+
+            <dt>
+                @Html.DisplayName("Data e Hora do Sorteio")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Data)
+            </dd>
+            <dt>
+                @Html.DisplayName("Acertadores da Sena")
+            </dt>
+
+            <dd>
+                @Html.TextBox("Sena", (string)@ViewBag.Sena, new { @readonly = true, @style = "width:5%" }) 
+            </dd>
+            <dt>
+                @Html.DisplayName("Acertadores da Quina")
+            </dt>
+            <dd>
+                @Html.TextBox("Quina", (string)@ViewBag.Quina, new { @readonly = true, @style = "width:5%" }) 
+            </dd>
+            <dt>
+                @Html.DisplayName("Acertadores da Quadra")
+            </dt>
+
+            <dd>
+                @Html.TextBox("Quadra", (string)@ViewBag.Quadra, new { @readonly = true, @style = "width:5%" }) 
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @*@Html.ActionLink("Edit", "Edit", new { id = Model.SorteioId }, new { @class = "btn btn-default", @style = "float:right" })|*@
+        <a class="btn btn-default" href="/Sorteios">Voltar</a>
+    </p>
+        </div>
+</body>

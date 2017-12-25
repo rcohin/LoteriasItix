@@ -1,0 +1,42 @@
+﻿@model LoteriasItix.Models.Aposta
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Aposta</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NumeroSorteio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumeroSorteio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Numeros)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Numeros)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Data)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Data)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.JogoId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,14 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<html>
+<body background="~/Content/Images/Loteria.jpg" style="background-size:1400px 800px; background-repeat:no-repeat">
+    <div style="height:auto; width:325px; margin-top:100px; background-color:black; border-radius:30px">
+        <ul>
+            <li class="btn" href="" style="margin-top:10px; width:80%;margin-left:10px; color:white">@Html.ActionLink("Central de Apostas", "Index", "Apostas")</li>
+            <li class="btn" href="" style="margin-top:10px; width:80%;margin-left:10px; margin-bottom:5%">@Html.ActionLink("Central de Sorteio", "Index", "Sorteios")</li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+﻿@model IEnumerable<LoteriasItix.Models.Aposta>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Central de Apostas</h2>
+<body background="~/Content/Images/Loteria.jpg" style="background-size:1400px 800px; background-repeat:no-repeat">
+    <p>
+        <a class="btn btn-default" href="/Apostas/Create">Nova Aposta</a>
+    </p>
+    <table class="table" style="background-color:cornsilk; opacity: 0.9;">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.JogoId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Numeros)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Data)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumeroSorteio)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td style="padding-top:2%; padding-left:6%">
+                    @Html.DisplayFor(modelItem => item.JogoId)
+                </td>
+                <td style="padding-top:2%">
+                    @Html.DisplayFor(modelItem => item.Numeros.N1)
+                    @Html.DisplayFor(modelItem => item.Numeros.N2)
+                    @Html.DisplayFor(modelItem => item.Numeros.N3)
+                    @Html.DisplayFor(modelItem => item.Numeros.N4)
+                    @Html.DisplayFor(modelItem => item.Numeros.N5)
+                    @Html.DisplayFor(modelItem => item.Numeros.N6)
+                </td>
+                <td style="padding-top:2%">
+                    @Html.DisplayFor(modelItem => item.Data)
+                </td>
+                <td style="padding-top:2%; padding-left:6%">
+                    @Html.DisplayFor(modelItem => item.NumeroSorteio)
+                </td>
+                <td>
+                    @*@Html.ActionLink("Edit", "Edit", new { id = item.JogoId }, new { @class = "btn btn-default" }) |*@
+                    @Html.ActionLink("Details", "Details", new { id = item.JogoId }, new { @class = "btn btn-default", @style = "display:none" }) 
+                    @Html.ActionLink("Delete", "Delete", new { id = item.JogoId }, new { @class = "btn btn-default", @style = "display:none" })
+                </td>
+            </tr>
+        }
+
+    </table>
+</body>
